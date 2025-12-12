@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT-Bedrift - IT Tjenester</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">IT-Bedrift</div>
+            <ul class="nav-links">
+                <li><a href="#home">Hjem</a></li>
+                <li><a href="#services">Tjenester</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-shape easter-egg" title="You found it!"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">Profesjonell IT-hjelp når du trenger det</h1>
+            <p class="fade-in" style="animation-delay: 0.2s;">Enkelt, raskt og pålitelig</p>
+            <button class="cta-button slide-up" style="animation-delay: 0.4s;">Be om hjelp</button>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-intro" id="services">
+        <div class="container">
+            <h2>Hva kan vi hjelpe deg med?</h2>
+            <p class="intro-text">Vi tilbyr et bredt spekter av IT-tjenester tilpasset dine behov</p>
+            
+            <div class="services-grid">
+                <div class="service-card scale-in">
+                    <div class="service-icon">🛠️</div>
+                    <h3>Support</h3>
+                    <p>Rask og profesjonell teknisk støtte for alle dine IT-problemer</p>
+                </div>
+                
+                <div class="service-card scale-in" style="animation-delay: 0.1s;">
+                    <div class="service-icon">🌐</div>
+                    <h3>Nettside</h3>
+                    <p>Design og utvikling av moderne, responsive nettsider</p>
+                </div>
+                
+                <div class="service-card scale-in" style="animation-delay: 0.2s;">
+                    <div class="service-icon">🔧</div>
+                    <h3>Vedlikehold</h3>
+                    <p>Vedlikehold av systemer for optimal ytelse og sikkerhet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section easter-egg-section" id="contact">
+        <div class="container">
+            <h2>Klar for å starte?</h2>
+            <p>Fyll ut et enkelt skjema og vi kontakter deg raskt</p>
+            <button class="cta-button-secondary">Start her</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 IT-Bedrift. Alle rettigheter forbeholdt.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Easter Egg: 67 on the blue sections
+        const easterEggShape = document.querySelector('.easter-egg');
+        const easterEggSection = document.querySelector('.easter-egg-section');
+
+        if (easterEggShape) {
+            easterEggShape.addEventListener('click', function(e) {
+                e.stopPropagation();
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+                this.style.transform = 'scale(1.15)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 300);
+            });
+        }
+
+        if (easterEggSection) {
+            easterEggSection.addEventListener('click', function(e) {
+                if (e.target.closest('.cta-button-secondary') || e.target.closest('h2') || e.target.closest('p')) return;
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
+            });
+        }
+    </script>
+</body>
+</html>
